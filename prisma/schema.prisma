@@ -5,12 +5,13 @@ datasource db {
 
 generator client {
     provider = "prisma-client-js"
+    output   = "./generated/client"
 }
 
 model Product {
     id          String  @id @default(auto()) @map("_id") @db.ObjectId
     image       String?
-    title        String  @unique
+    title       String  @unique
     price       Float
     category    String
     description String?
